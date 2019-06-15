@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./images/LATITUDE-DONGLI-BREWERY-01_dining-area-770x472.jpg');
+  background-image: url('./images/Stonecloud-Equipment.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -23,4 +23,8 @@ code {
   margin: auto;
   padding-top: 10%;
   flex: 1;
+}
+
+a {
+  color: black;
 }
