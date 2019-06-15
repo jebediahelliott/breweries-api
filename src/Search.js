@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
+import BreweryList from './BreweryList'
+import BreweryCard from './BreweryCard'
 import axios from 'axios';
 
 class Search extends Component {
@@ -42,6 +44,8 @@ class Search extends Component {
           <Button variant="secondary" onClick={this.handleSubmit}>Submit</Button>
         </InputGroup.Append>
       </InputGroup>
+      <BreweryList />
+      <BreweryCard />
       </div>
     )
   }
