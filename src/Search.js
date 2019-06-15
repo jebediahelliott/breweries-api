@@ -6,15 +6,18 @@ class Search extends Component {
   constructor(props){
     super(props)
     this.state = {
-      searchTerm: ''
+      searchTerm: '',
+      breweries: []
     }
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    let parsedTerm = this.state.searchTerm.replace(/ /g, '_');
-    axios.get(`https://api.openbrewerydb.org/breweries?by_city=${parsedTerm}`)
-    .then(res => console.log(res))
+    const urlTerm = encodeURIComponent(this.state.searchTerm);
+    axios.get(`https://api.openbrewerydb.org/breweries?by_city=${urlTerm}`)
+    .then(res => this.setState({
+      breweries: res.data
+    }))
     .catch(res => console.log(res.errors))
     this.setState({
       searchTerm: ''
