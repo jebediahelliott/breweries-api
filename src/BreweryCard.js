@@ -4,15 +4,15 @@ import { Card } from 'react-bootstrap';
 class BreweryCard extends Component {
 
   render(){
+    const brewery = this.props.brewery;
     return(
       <Card style={{ width: '100%' }}>
         <Card.Body>
           <Card.Link href="#">
-            <Card.Title>Brewery Name</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Brewery Type</Card.Subtitle>
+            <Card.Title>{brewery.name}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">{brewery.brewery_type}</Card.Subtitle>
             <Card.Text>
-            2235 N Atherton St
-            State College, Pennsylvania, 16803-1529, United States
+            <p>{brewery.street} {brewery.city}, {brewery.state}, {brewery.postal_code}, {brewery.country}</p>
             </Card.Text>
           </Card.Link>
         </Card.Body>

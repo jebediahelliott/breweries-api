@@ -21,7 +21,7 @@ code {
 .App {
   max-width: 80%;
   margin: auto;
-  padding-top: 10%;
+  padding: 10% 0;
   flex: 1;
 }
 
