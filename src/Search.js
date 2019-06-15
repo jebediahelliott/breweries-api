@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
+import axios from 'axios';
 
 class Search extends Component {
   constructor(props){
@@ -11,7 +12,13 @@ class Search extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Submitted");
+    let parsedTerm = this.state.searchTerm.replace(/ /g, '_');
+    axios.get(`https://api.openbrewerydb.org/breweries?by_city=${parsedTerm}`)
+    .then(res => console.log(res))
+    .catch(res => console.log(res.errors))
+    this.setState({
+      searchTerm: ''
+    })
   }
 
   handleChange = (event) => {
