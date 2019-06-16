@@ -30,7 +30,7 @@ class Brewery extends Component {
             <Card.Link href={brewery.website_url}>{brewery.website_url}</Card.Link>
           </Card.Body>
         </Card>
-        <div style={{ height: '50vh', width: '100%' }}>
+        <div style={{ height: '60vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyBBnzoirznlUb-HBklwUM9U_qvLg6O09_Q' }}
           defaultCenter={{
