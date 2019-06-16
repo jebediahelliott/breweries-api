@@ -13,6 +13,7 @@ class Brewery extends Component {
     },
     zoom: 15
   };
+  // TODO: Account for no lat/long 
 
   render() {
     const brewery = this.props.location.state
