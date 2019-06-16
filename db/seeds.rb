@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 breweries = [
   {
-    "id": 6348,
     "name": "Zeroday Brewing Company",
     "brewery_type": "brewpub",
     "street": "250 Reily St Ste 103",
@@ -19,13 +18,11 @@ breweries = [
     "latitude": "40.2717061",
     "phone": "7177456218",
     "website_url": "http://www.zerodaybrewing.com",
-    "updated_at": "2018-08-24T16:13:31.172Z",
     "tag_list": [
 
     ]
   },
   {
-    "id": 6045,
     "name": "Brewery in Planning - Harrisburg",
     "brewery_type": "planning",
     "street": "",
@@ -37,13 +34,11 @@ breweries = [
     "latitude": null,
     "phone": "",
     "website_url": "",
-    "updated_at": "2018-08-11T21:39:23.852Z",
     "tag_list": [
 
     ]
   },
   {
-    "id": 6005,
     "name": "Appalachian Brewing Co - Harrisburg",
     "brewery_type": "brewpub",
     "street": "50 N Cameron St",
@@ -55,13 +50,11 @@ breweries = [
     "latitude": "40.291059",
     "phone": "7172211080",
     "website_url": "http://www.abcbrew.com",
-    "updated_at": "2018-08-24T16:06:18.037Z",
     "tag_list": [
 
     ]
   },
   {
-    "id": 6030,
     "name": "Boneshire Brew Works",
     "brewery_type": "micro",
     "street": "7462 Derry St",
@@ -73,13 +66,11 @@ breweries = [
     "latitude": "40.2633825",
     "phone": "7174127814",
     "website_url": "http://www.boneshire.com",
-    "updated_at": "2018-08-24T16:06:50.894Z",
     "tag_list": [
 
     ]
   },
   {
-    "id": 6281,
     "name": "Spring Gate Brewery",
     "brewery_type": "micro",
     "street": "5790 Devonshire Rd",
@@ -91,13 +82,11 @@ breweries = [
     "latitude": null,
     "phone": "7174800066",
     "website_url": "http://www.springgatebrewery.com",
-    "updated_at": "2018-08-11T21:39:31.560Z",
     "tag_list": [
 
     ]
   },
   {
-    "id": 6305,
     "name": "The Millworks Brewery",
     "brewery_type": "brewpub",
     "street": "340 Verbeke St",
@@ -109,13 +98,11 @@ breweries = [
     "latitude": "40.270538",
     "phone": "7176954888",
     "website_url": "http://www.millworksharrisburg.com",
-    "updated_at": "2018-08-24T16:12:36.758Z",
     "tag_list": [
 
     ]
   },
   {
-    "id": 6309,
     "name": "The Vegetable Hunter",
     "brewery_type": "brewpub",
     "street": "614 N 2nd St",
@@ -127,13 +114,11 @@ breweries = [
     "latitude": "40.2638045",
     "phone": "7176956229",
     "website_url": "http://www.TheVegetableHunter.com",
-    "updated_at": "2018-08-24T16:12:42.745Z",
     "tag_list": [
 
     ]
   },
   {
-    "id": 6341,
     "name": "Wolf Brewing Company",
     "brewery_type": "planning",
     "street": "",
@@ -145,7 +130,6 @@ breweries = [
     "latitude": nil,
     "phone": "7176452752",
     "website_url": "http://www.wolfbrewingco.com",
-    "updated_at": "2018-08-11T21:39:33.466Z",
     "tag_list": [
 
     ]
