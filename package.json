@@ -1,0 +1,13 @@
+{
+  "name": "breweries",
+  "license": "MIT",
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.9.0"
+  },
+  "scripts": {
+    "build": "npm --prefix client install && npm --prefix client build",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "npm build && npm deploya"
+  }
+}
