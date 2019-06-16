@@ -32,7 +32,7 @@ class Brewery extends Component {
         </Card>
         <div style={{ height: '60vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyBBnzoirznlUb-HBklwUM9U_qvLg6O09_Q' }}
+          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
           defaultCenter={{
             lat: parseFloat(brewery.latitude),
             lng: parseFloat(brewery.longitude)
