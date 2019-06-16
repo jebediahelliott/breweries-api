@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Card } from 'react-bootstrap';
 
-class BreweryCard extends Component {
+class Brewery extends Component {
 
-  render(){
-    const brewery = this.props.brewery;
+  render() {
+    const brewery = this.props.location.state
     return (
       <div>
         <Card style={{ width: '100%' }}>
           <Card.Body>
-            <Link to={{
-              pathname: `/${brewery.name}`,
-              state: brewery
-            }}>
+            <Link to='/'>Return to Breweries</Link>
               <Card.Title>{brewery.name}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">{brewery.brewery_type}</Card.Subtitle>
               <Card.Text>
               {brewery.street} {brewery.city}, {brewery.state}, {brewery.postal_code}, {brewery.country}
               </Card.Text>
-            </Link>
             <Card.Link href={brewery.website_url}>{brewery.website_url}</Card.Link>
           </Card.Body>
         </Card>
@@ -28,4 +24,4 @@ class BreweryCard extends Component {
   }
 }
 
-export default BreweryCard;
+export default Brewery;
