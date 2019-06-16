@@ -30,8 +30,8 @@ breweries = [
     "state": "Pennsylvania",
     "postal_code": "17111-2231",
     "country": "United States",
-    "longitude": null,
-    "latitude": null,
+    "longitude": nil,
+    "latitude": nil,
     "phone": "",
     "website_url": "",
     "tag_list": [
@@ -78,8 +78,8 @@ breweries = [
     "state": "Pennsylvania",
     "postal_code": "17112-3508",
     "country": "United States",
-    "longitude": null,
-    "latitude": null,
+    "longitude": nil,
+    "latitude": nil,
     "phone": "7174800066",
     "website_url": "http://www.springgatebrewery.com",
     "tag_list": [
@@ -135,3 +135,6 @@ breweries = [
     ]
   }
 ]
+breweries.each do |brewery|
+  Brewery.create(brewery)
+end
