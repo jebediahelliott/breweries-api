@@ -12,7 +12,7 @@ class BreweryList extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://localhost:3001/breweries')
+    axios.get('/breweries')
     .then(res => this.setState({
       breweries: res.data
     }))
