@@ -16,7 +16,7 @@ class BreweryList extends Component {
     .then(res => this.setState({
       breweries: res.data
     }))
-    .catch(res => console.log(res.errors))
+    .catch(res => console.log(res))
   }
 
   listBreweries = (breweries) => {
