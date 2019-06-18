@@ -12,7 +12,7 @@ class BreweryCard extends Component {
           <Card.Body>
             <Link to={{
               pathname: `/${brewery.name}`,
-              state: brewery
+              state: { brewery: brewery, googleMap: this.props.googleMap }
             }}>
               <Card.Title>{brewery.name}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">{brewery.brewery_type}</Card.Subtitle>

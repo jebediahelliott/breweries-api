@@ -13,11 +13,11 @@ class Brewery extends Component {
     },
     zoom: 15
   };
-  // TODO: Account for no lat/long 
+  // TODO: Account for no lat/long
 
   render() {
-    const brewery = this.props.location.state
-    console.log(brewery);
+    const brewery = this.props.location.state.brewery
+    console.log(this.props.location);
     return (
       <div>
         <Card style={{ width: '100%' }}>
@@ -33,7 +33,7 @@ class Brewery extends Component {
         </Card>
         <div style={{ height: '60vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
+          bootstrapURLKeys={{ key: this.props.location.state.googleMap }}
           defaultCenter={{
             lat: parseFloat(brewery.latitude),
             lng: parseFloat(brewery.longitude)

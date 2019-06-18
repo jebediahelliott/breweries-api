@@ -7,20 +7,24 @@ class BreweryList extends Component {
   constructor() {
     super()
     this.state = {
-      breweries: null
+      breweries: null,
+      googleMap: null
     }
   }
 
   componentDidMount() {
     axios.get('/breweries')
-    .then(res => this.setState({
-      breweries: res.data
-    }))
+    .then(res => {
+      this.setState({
+        breweries: res.data.breweries,
+        googleMap: res.data.google_map
+      })
+    })
     .catch(res => console.log(res))
   }
 
   listBreweries = (breweries) => {
-    return breweries.map(brewery => <BreweryCard key={brewery.id} brewery={brewery} />)
+    return breweries.map(brewery => <BreweryCard key={brewery.id} googleMap={this.state.googleMap} brewery={brewery} />)
   }
 
   render(){
