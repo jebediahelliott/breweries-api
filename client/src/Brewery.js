@@ -52,7 +52,11 @@ class Brewery extends Component {
               text={brewery.name}
               />
           ) : (
-            null
+            <MapMarker
+              lat={center.lat}
+              lng={center.lng}
+              text="This brewery doesn't have a location yet"
+              />
           )}
         </GoogleMapReact>
         </div>
