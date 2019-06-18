@@ -8,8 +8,8 @@ import MapMarker from './MapMarker'
 class Brewery extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 40.2732,
+      lng: -76.8867
     },
     zoom: 15
   };
@@ -17,7 +17,15 @@ class Brewery extends Component {
 
   render() {
     const brewery = this.props.location.state.brewery
-    console.log(this.props.location);
+    let center
+    if (brewery.latitude && brewery.longitude) {
+      center = {
+        lat: parseFloat(brewery.latitude),
+        lng: parseFloat(brewery.longitude)
+      }
+    }else {
+      center = this.props.center
+    }
     return (
       <div>
         <Card style={{ width: '100%' }}>
@@ -34,17 +42,18 @@ class Brewery extends Component {
         <div style={{ height: '60vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: this.props.location.state.googleMap }}
-          defaultCenter={{
-            lat: parseFloat(brewery.latitude),
-            lng: parseFloat(brewery.longitude)
-          }}
+          defaultCenter={center}
           defaultZoom={this.props.zoom}
         >
-          <MapMarker
-            lat={parseFloat(brewery.latitude)}
-            lng={parseFloat(brewery.longitude)}
-            text={brewery.name}
-            />
+          {(brewery.latitude && brewery.longitude) ? (
+            <MapMarker
+              lat={parseFloat(brewery.latitude)}
+              lng={parseFloat(brewery.longitude)}
+              text={brewery.name}
+              />
+          ) : (
+            null
+          )}
         </GoogleMapReact>
         </div>
       </div>
