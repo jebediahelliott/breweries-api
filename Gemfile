@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'rb-readline'
   gem 'dotenv-rails'
+  gem 'pry'
 end
 
 group :development do
