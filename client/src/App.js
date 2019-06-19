@@ -23,7 +23,7 @@ class App extends Component {
         googleMap: res.data.google_map
       })
     })
-    .catch(res => console.log(res))
+    .catch(res => "Render Error Message")
   }
 
   render() {
