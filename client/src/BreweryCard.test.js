@@ -34,9 +34,14 @@ describe('<BreweryCard />', () => {
     expect(wrapper.find('Button').at(1).text()).toEqual('Brewery Website')
     expect(wrapper.find('a').props().href).toEqual(brewery.website_url)
   })
-  it('displays a button to view the map page', () => {
+  it('displays a button to view the map page if it not on the map page', () => {
     const wrapper = shallow(<BreweryCard brewery={brewery} />);
     expect(wrapper.find('Button').at(0).text()).toEqual('View Map')
     expect(wrapper.find('#mapLink').props().to.pathname).toEqual(`/${brewery.name}`)
+  })
+  it('displays a button to go back to the brewery page if it is on the map page', () => {
+    const wrapper = shallow(<BreweryCard brewery={brewery} withMap={true} />);
+    expect(wrapper.find('Button').at(0).text()).toEqual('Back to Breweries')
+    expect(wrapper.find('#mapLink').props().to.pathname).toEqual('/')
   })
 })
