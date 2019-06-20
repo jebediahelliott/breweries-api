@@ -38,8 +38,8 @@ class Brewery extends Component {
         >
           {(brewery.latitude && brewery.longitude) ? (
             <MapMarker
-              lat={parseFloat(brewery.latitude)}
-              lng={parseFloat(brewery.longitude)}
+              lat={center.lat}
+              lng={center.lng}
               text={brewery.name}
               />
           ) : (
