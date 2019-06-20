@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import GoogleMapReact from 'google-map-react';
 import MapMarker from './MapMarker'
+import BreweryCard from './BreweryCard'
 
 
 class Brewery extends Component {
@@ -28,17 +29,7 @@ class Brewery extends Component {
     }
     return (
       <div>
-        <Card style={{ width: '100%' }}>
-          <Card.Body>
-            <Link to='/'>Back to Breweries</Link>
-              <Card.Title>{brewery.name}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">{brewery.brewery_type}</Card.Subtitle>
-              <Card.Text>
-              {brewery.street} {brewery.city}, {brewery.state}, {brewery.postal_code}, {brewery.country}
-              </Card.Text>
-            <Card.Link href={brewery.website_url}>{brewery.website_url}</Card.Link>
-          </Card.Body>
-        </Card>
+        <BreweryCard brewery={brewery} withMap={true} />
         <div style={{ height: '60vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: this.props.location.state.googleMap }}
@@ -66,3 +57,15 @@ class Brewery extends Component {
 }
 
 export default Brewery;
+
+// <Card style={{ width: '100%' }}>
+//   <Card.Body>
+//     <Link to='/'>Back to Breweries</Link>
+//       <Card.Title>{brewery.name}</Card.Title>
+//       <Card.Subtitle className="mb-2 text-muted">{brewery.brewery_type}</Card.Subtitle>
+//       <Card.Text>
+//       {brewery.street} {brewery.city}, {brewery.state}, {brewery.postal_code}, {brewery.country}
+//       </Card.Text>
+//     <Card.Link href={brewery.website_url}>{brewery.website_url}</Card.Link>
+//   </Card.Body>
+// </Card>

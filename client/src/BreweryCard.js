@@ -16,14 +16,18 @@ class BreweryCard extends Component {
             <Card.Text>
             {brewery.street} {brewery.city}, {brewery.state}, {brewery.postal_code}, {brewery.country}
             </Card.Text>
-            <ButtonGroup vertical>
+            <ButtonGroup>
               <LinkContainer id='mapLink' to={{
-                pathname: `/${brewery.name}`,
+                pathname: this.props.withMap ? '/' : `/${brewery.name}`,
                 state: { brewery: brewery, googleMap: this.props.googleMap }
               }}>
-                <Button variant="outline-secondary">View Map</Button>
+                <Button variant="secondary" className="rounded-0">
+                  {this.props.withMap ? 'Back to Breweries' : 'View Map' }
+                </Button>
               </LinkContainer>
-              <a href={brewery.website_url}><Button variant="outline-secondary">Brewery Website</Button></a>
+              <a href={brewery.website_url}>
+                <Button variant="secondary" className="rounded-0">Brewery Website</Button>
+              </a>
             </ButtonGroup>
           </Card.Body>
         </Card>
