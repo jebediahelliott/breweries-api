@@ -16,7 +16,7 @@ describe('<Brewery />', () => {
     );
     expect(wrapper.find('BreweryCard').props().withMap).toEqual(true)
   })
-    it('renders GoogleMapReact with the right location', () => {
+    it('renders GoogleMapReact with the provided coordinates', () => {
       const location = {state: {
         brewery: {
           latitude: '0',
@@ -30,6 +30,21 @@ describe('<Brewery />', () => {
         </MemoryRouter>
       );
       expect(wrapper.find('GoogleMap').props().defaultCenter).toEqual({lat: 0, lng: 0})
+    })
+    it('renders GoogleMapReact with a default coordinates when none are given', () => {
+      const location = {state: {
+        brewery: {
+          latitude: null,
+          longitude: null
+        },
+        googleMap: ''
+      }}
+      const wrapper = mount(
+        <MemoryRouter>
+          <Brewery location={location}/>
+        </MemoryRouter>
+      );
+      expect(wrapper.find('GoogleMap').props().defaultCenter).toEqual({lat: 40.2732, lng: -76.8867})
     })
   })
 
