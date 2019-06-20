@@ -22,7 +22,7 @@ describe('<BreweryCard />', () => {
   })
   it('displays the brewery type', () => {
     const wrapper = shallow(<BreweryCard brewery={brewery} />);
-    expect(wrapper.find('CardSubtitle').text()).toEqual(brewery.brewery_type)
+    expect(wrapper.find('CardSubtitle').text()).toEqual(`Brewery Type: ${brewery.brewery_type}`)
   })
   it('displays the brewery address', () => {
     const address = `${brewery.street} ${brewery.city}, ${brewery.state}, ${brewery.postal_code}, ${brewery.country}`;

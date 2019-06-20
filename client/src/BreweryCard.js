@@ -12,7 +12,7 @@ class BreweryCard extends Component {
         <Card style={{ width: '100%' }}>
           <Card.Body>
             <Card.Title>{brewery.name}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">{brewery.brewery_type}</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted">Brewery Type: {brewery.brewery_type}</Card.Subtitle>
             <Card.Text>
             {brewery.street} {brewery.city}, {brewery.state}, {brewery.postal_code}, {brewery.country}
             </Card.Text>
