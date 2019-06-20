@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
 import GoogleMapReact from 'google-map-react';
 import MapMarker from './MapMarker'
 import BreweryCard from './BreweryCard'
