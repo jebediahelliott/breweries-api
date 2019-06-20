@@ -25,8 +25,18 @@ describe('<BreweryCard />', () => {
     expect(wrapper.find('CardSubtitle').text()).toEqual(brewery.brewery_type)
   })
   it('displays the brewery address', () => {
-    const address = `${brewery.street} ${brewery.city}, ${brewery.state}, ${brewery.postal_code}, ${brewery.country}`
+    const address = `${brewery.street} ${brewery.city}, ${brewery.state}, ${brewery.postal_code}, ${brewery.country}`;
     const wrapper = shallow(<BreweryCard brewery={brewery} />);
-    expect(wrapper.find('CardText').text()).toEqual(address)
+    expect(wrapper.find('CardText').text()).toEqual(address);
+  })
+  it('displays a button to view the brewery website', () => {
+    const wrapper = shallow(<BreweryCard brewery={brewery} />);
+    expect(wrapper.find('Button').at(1).text()).toEqual('Brewery Website')
+    expect(wrapper.find('a').props().href).toEqual(brewery.website_url)
+  })
+  it('displays a button to view the map page', () => {
+    const wrapper = shallow(<BreweryCard brewery={brewery} />);
+    expect(wrapper.find('Button').at(0).text()).toEqual('View Map')
+    expect(wrapper.find('#mapLink').props().to.pathname).toEqual(`/${brewery.name}`)
   })
 })
