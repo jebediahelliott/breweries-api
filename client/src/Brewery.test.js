@@ -46,8 +46,39 @@ describe('<Brewery />', () => {
       );
       expect(wrapper.find('GoogleMap').props().defaultCenter).toEqual({lat: 40.2732, lng: -76.8867})
     })
+    it('renders MapMarker with provided coordinates and the brewery name', () => {
+      const location = {state: {
+        brewery: {
+          name: 'Super Cool Brewery',
+          latitude: '0',
+          longitude: '0'
+        },
+        googleMap: ''
+      }}
+      const wrapper = mount(
+        <MemoryRouter>
+          <Brewery location={location}/>
+        </MemoryRouter>
+      );
+      expect(wrapper.find('MapMarker').props().lat).toEqual(0)
+      expect(wrapper.find('MapMarker').props().lng).toEqual(0)
+      expect(wrapper.find('MapMarker').props().text).toEqual('Super Cool Brewery')
+    })
+    it('renders MapMarker with default information if no coordinates are given', () => {
+      const location = {state: {
+        brewery: {
+          latitude: null,
+          longitude: null
+        },
+        googleMap: ''
+      }}
+      const wrapper = mount(
+        <MemoryRouter>
+          <Brewery location={location}/>
+        </MemoryRouter>
+      );
+      expect(wrapper.find('MapMarker').props().lat).toEqual(40.2732)
+      expect(wrapper.find('MapMarker').props().lng).toEqual(-76.8867)
+      expect(wrapper.find('MapMarker').props().text).toEqual("This brewery doesn't have a location yet")
+    })
   })
-
-// Assertions for MapMarker
-  // expect(wrapper.find('MapMarker').props().lat).toEqual(0)
-  // expect(wrapper.find('MapMarker').props().lng).toEqual(0)
